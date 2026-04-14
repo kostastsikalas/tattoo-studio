@@ -17,6 +17,8 @@ import studio1 from './assets/studio1.png'
 import studio2 from './assets/studio2.png'
 import studio3 from './assets/studio3.png'
 import studio4 from './assets/studio4.png'
+import studio5 from './assets/studio5.png'
+import studio6 from './assets/studio6.png'
 // ARTISTS & TATTOOS
 import zac from './assets/zac.png'
 import ztattoo1 from './assets/ztattoo1.png'
@@ -191,7 +193,7 @@ function App() {
             autoplay={{ delay: 4000 }}
             className="h-full w-full"
           >
-            {[studio1, studio2, studio3, studio4].map((img, i) => (
+            {[studio1, studio2, studio3, studio4, studio5, studio6].map((img, i) => (
               <SwiperSlide key={i}>
                 <div className="h-full w-full overflow-hidden">
                   <img src={img} className="w-full h-full object-cover" alt={`Maze Tattoo Studio Heraklion Interior View ${i + 1}`} />
@@ -345,7 +347,7 @@ function App() {
           {/* Image 1 - Vertical */}
           <div className="col-span-2 row-span-2 aspect-[3/4] overflow-hidden bg-zinc-900 group border border-white/5">
             <img
-              onClick={() => setSelectedImage(p1)} 
+              onClick={() => setSelectedImage(p1)}
               src={p1}
               className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 group-hover:scale-110 cursor-zoom-in"
               alt="The Silver Ritual - Premium Body Piercings Heraklion"

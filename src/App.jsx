@@ -402,7 +402,8 @@ function App() {
             <div className="space-y-8 pt-6">
               <div>
                 <p className="text-[9px] text-gray-600 uppercase tracking-widest mb-3">Instagram Portfolio</p>
-                <a href="https://instagram.com/mazetattoo" className="text-2xl md:text-3xl font-light hover:text-accent-silver transition-all tracking-wide underline underline-offset-8 decoration-white/10">@maze_tattoo_heraklion</a>
+                <a href="https://www.instagram.com/mazetattoostudio/" className="text-2xl md:text-3xl font-light hover:text-accent-silver transition-all tracking-wide underline underline-offset-8 decoration-white/10">@mazetattoostudio
+                </a>
               </div>
               <div>
                 <p className="text-[9px] text-gray-600 uppercase tracking-widest mb-3">Direct Contact</p>

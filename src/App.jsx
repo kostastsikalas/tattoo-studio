@@ -64,6 +64,18 @@ function App() {
     }
   };
 
+  const trackInteraction = (action_name) => {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'conversion', {
+        'send_to': 'AW-18068501641',
+        'event_category': 'Engagement',
+        'event_label': action_name
+      });
+      // Also send a general event for Analytics if connected
+      window.gtag('event', 'click_' + action_name);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-[#050505] text-white font-sans overflow-x-hidden selection:bg-accent-silver selection:text-black">
       <Helmet>
@@ -133,19 +145,19 @@ function App() {
         {/* Menu Links Center */}
         <div className="flex space-x-8 text-[10px] uppercase tracking-[0.4em] text-gray-500">
           <button
-            onClick={() => smoothScroll('gallery')}
+            onClick={() => { smoothScroll('gallery'); trackInteraction('menu_gallery'); }}
             className="hover:text-white transition-all duration-500"
           >
             Works
           </button>
           <button
-            onClick={() => smoothScroll('artists-section')}
+            onClick={() => { smoothScroll('artists-section'); trackInteraction('menu_artists'); }}
             className="hover:text-white transition-all duration-500"
           >
             Artists
           </button>
           <button
-            onClick={() => smoothScroll('contact')}
+            onClick={() => { smoothScroll('contact'); trackInteraction('menu_contact'); }}
             className="hover:text-white transition-all duration-500"
           >
             Find Us
@@ -162,7 +174,7 @@ function App() {
           Path of <span className="font-bold">Ink</span>
         </h1>
         <button
-          onClick={() => smoothScroll('contact')}
+          onClick={() => { smoothScroll('contact'); trackInteraction('hero_cta_clicked'); }}
           className="mt-12 group relative px-10 md:px-14 py-4 overflow-hidden border border-white/10"
         >
           <span className="relative z-10 text-[10px] tracking-[0.4em] uppercase group-hover:text-black transition-colors duration-500">Get in the Maze</span>
@@ -223,7 +235,7 @@ function App() {
               <p className="text-gray-400 text-sm leading-loose tracking-widest uppercase italic">
                 Zac works on both large-scale and small tattoo projects, always emphasizing precision, detail, and the correct placement of each design on the body. He creates fully custom pieces tailored to the individual, drawing from experience across a wide range of styles. While he has explored many artistic directions, he places strong focus on Japanese, Οld school style, as well as cartoon and anime-inspired designs, using solid colors, deep blacks, and a dynamic mix of bold and fine lines. He also works extensively with black and grey compositions, incorporating a variety of textures to add depth and character to each piece.
               </p>
-              <a href="https://www.instagram.com/zac_tatts/" target="_blank" rel="noreferrer" className="inline-block border-b border-accent-silver/30 pb-1 text-[10px] tracking-widest uppercase hover:text-accent-silver transition-colors">
+              <a href="https://www.instagram.com/zac_tatts/" onClick={() => trackInteraction('instagram_zac')} target="_blank" rel="noreferrer" className="inline-block border-b border-accent-silver/30 pb-1 text-[10px] tracking-widest uppercase hover:text-accent-silver transition-colors">
                 Instagram — @zac_tatts
               </a>
               <div className="grid grid-cols-3 gap-3 pt-6">
@@ -243,7 +255,7 @@ function App() {
               <p className="text-gray-400 text-sm leading-loose tracking-widest uppercase italic">
                 Yorgos creates mixed graphic concepts with realism, micro-realism and surrealism - accompanied with precision, fine lines, sharp detailes and a strong sense of design. He has traveled around the globe to various countries tattooing and continues his journey into art - combining his love to new cultures and experiences.
               </p>
-              <a href="https://www.instagram.com/frag_ttt/" target="_blank" rel="noreferrer" className="inline-block border-b border-accent-silver/30 pb-1 text-[10px] tracking-widest uppercase hover:text-accent-silver transition-colors">
+              <a href="https://www.instagram.com/frag_ttt/" onClick={() => trackInteraction('instagram_frag')} target="_blank" rel="noreferrer" className="inline-block border-b border-accent-silver/30 pb-1 text-[10px] tracking-widest uppercase hover:text-accent-silver transition-colors">
                 @frag_ttt — Portfolio
               </a>
               <div className="grid grid-cols-3 gap-3 pt-6">
@@ -269,7 +281,7 @@ function App() {
                 Specialized in Industrial yet Luxury Projects.
                 Professional body piercer since 2018, with international experience across Europe and beyond.
               </p>
-              <a href="https://www.instagram.com/kuki_blades/" target="_blank" rel="noreferrer" className="inline-block border-b border-accent-silver/30 pb-1 text-[10px] tracking-widest uppercase hover:text-accent-silver transition-colors">
+              <a href="https://www.instagram.com/kuki_blades/" onClick={() => trackInteraction('instagram_kuki')} target="_blank" rel="noreferrer" className="inline-block border-b border-accent-silver/30 pb-1 text-[10px] tracking-widest uppercase hover:text-accent-silver transition-colors">
                 Instagram — @kuki_blades
 
               </a>
@@ -402,14 +414,14 @@ function App() {
             <div className="space-y-8 pt-6">
               <div>
                 <p className="text-[9px] text-gray-600 uppercase tracking-widest mb-3">Instagram Portfolio</p>
-                <a href="https://www.instagram.com/mazetattoostudio/" className="text-2xl md:text-3xl font-light hover:text-accent-silver transition-all tracking-wide underline underline-offset-8 decoration-white/10">@mazetattoostudio
+                <a href="https://www.instagram.com/mazetattoostudio/" onClick={() => trackInteraction('instagram_main')} className="text-2xl md:text-3xl font-light hover:text-accent-silver transition-all tracking-wide underline underline-offset-8 decoration-white/10">@mazetattoostudio
                 </a>
               </div>
               <div>
                 <p className="text-[9px] text-gray-600 uppercase tracking-widest mb-3">Direct Contact</p>
                 <p className="text-gray-400 text-sm tracking-[0.2em] leading-loose">
                   11 KAGIAMPI ST, HERAKLION, CRETE<br />
-                  TEL: 2811815136<br />
+                  <a href="tel:+302811815136" onClick={() => trackInteraction('call_phone')} className="hover:text-accent-silver transition-colors">TEL: 2811815136</a><br />
                   MONDAY - SATURDAY: 11:00 AM - 8:00 PM
                 </p>
               </div>

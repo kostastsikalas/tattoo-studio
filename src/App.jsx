@@ -221,7 +221,7 @@ function App() {
             <div className="space-y-6">
               <h4 className="text-4xl md:text-5xl font-bold uppercase italic text-accent-silver tracking-tighter">Zac</h4>
               <p className="text-gray-400 text-sm leading-loose tracking-widest uppercase italic">
-                Specialist in Fine Line and Geometric patterns. Με πάνω από 8 χρόνια εμπειρίας, ο zac μετατρέπει πολύπλοκες ιδέες σε μινιμαλιστικά αριστουργήματα.
+                Zac works on both large-scale and small tattoo projects, always emphasizing precision, detail, and the correct placement of each design on the body. He creates fully custom pieces tailored to the individual, drawing from experience across a wide range of styles. While he has explored many artistic directions, he places strong focus on Japanese, Οld school style, as well as cartoon and anime-inspired designs, using solid colors, deep blacks, and a dynamic mix of bold and fine lines. He also works extensively with black and grey compositions, incorporating a variety of textures to add depth and character to each piece.
               </p>
               <a href="https://www.instagram.com/zac_tatts/" target="_blank" rel="noreferrer" className="inline-block border-b border-accent-silver/30 pb-1 text-[10px] tracking-widest uppercase hover:text-accent-silver transition-colors">
                 Instagram — @zac_tatts

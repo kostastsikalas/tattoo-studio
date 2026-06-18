@@ -38,6 +38,9 @@ import t3 from './assets/t3.png'
 import t4 from './assets/t4.png'
 import t5 from './assets/t5.png'
 import t6 from './assets/t6.png'
+import t7 from './assets/t7.png'
+import t8 from './assets/t8.png'
+import t9 from './assets/t9.png'
 
 // PIERCINGS
 import p1 from './assets/p1.png'
@@ -54,7 +57,10 @@ function App() {
     t3,
     t4,
     t5,
-    t6
+    t6,
+    t7,
+    t8,
+    t9
   ];
 
   const smoothScroll = (id) => {
@@ -322,8 +328,8 @@ function App() {
           <div className="md:col-span-12 aspect-[21/9] overflow-hidden bg-zinc-900 group">
             <img onClick={() => setSelectedImage(images[2])} src={images[2]} className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 group-hover:scale-110 cursor-zoom-in" alt="Premium Custom Tattoo and Piercing Art Portfolio Heraklion" />
           </div>
-          {[images[3], images[4], images[5]].map((img, i) => (
-            <div key={i} className={`md:col-span-4 aspect-[3/4] overflow-hidden bg-zinc-900 group ${i === 0 ? 'md:translate-y-12' : i === 2 ? 'md:translate-y-24' : ''}`}>
+          {images.slice(3).map((img, i) => (
+            <div key={i} className={`md:col-span-4 aspect-[3/4] overflow-hidden bg-zinc-900 group ${i % 3 === 0 ? 'md:translate-y-12' : i % 3 === 2 ? 'md:translate-y-24' : ''} ${i >= 3 ? 'mt-6 md:mt-16' : ''}`}>
               <img onClick={() => setSelectedImage(img)} src={img} className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 group-hover:scale-110 cursor-zoom-in" alt="Premium Custom Tattoo and Piercing Art Portfolio Heraklion" />
             </div>
           ))}
@@ -422,6 +428,7 @@ function App() {
                 <p className="text-gray-400 text-sm tracking-[0.2em] leading-loose">
                   11 KAGIAMPI ST, HERAKLION, CRETE<br />
                   <a href="tel:+302811815136" onClick={() => trackInteraction('call_phone')} className="hover:text-accent-silver transition-colors">TEL: 2811815136</a><br />
+                  <a href="mailto:mazetattooher@gmail.com" onClick={() => trackInteraction('email_click')} className="hover:text-accent-silver transition-colors">EMAIL: mazetattooher@gmail.com</a><br />
                   MONDAY - SATURDAY: 11:00 AM - 8:00 PM
                 </p>
               </div>

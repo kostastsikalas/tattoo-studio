@@ -38,7 +38,6 @@ import t3 from './assets/t3.png'
 import t4 from './assets/t4.png'
 import t5 from './assets/t5.png'
 import t6 from './assets/t6.png'
-import t7 from './assets/t7.png'
 import t8 from './assets/t8.png'
 import t9 from './assets/t9.png'
 
@@ -58,7 +57,6 @@ function App() {
     t4,
     t5,
     t6,
-    t7,
     t8,
     t9
   ];
